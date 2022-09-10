@@ -5,6 +5,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import Header from "../Header/Header";
+import Main from "../Main/Main";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header />
+          <Main />
         </Route>
         <Route exact path="/signin">
           <Login />

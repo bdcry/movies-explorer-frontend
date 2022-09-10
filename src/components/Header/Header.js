@@ -5,9 +5,13 @@ import logo from "../../images/logo.svg";
 function Header() {
   return (
     <header className="header">
-        <Link to="/">
-            <img className='header__logo' src={logo}></img>
-        </Link>
+      <Link to="/">
+        <img
+          className="header__logo"
+          src={logo}
+          alt="Логотип Проекта Movies Explorer"
+        ></img>
+      </Link>
       <div className="header__auth">
         <Link className="header__signup" to="/signup">
           Регистрация
