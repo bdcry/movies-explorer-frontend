@@ -6,6 +6,7 @@ import Register from "../Register/Register";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/">
           <Header />
           <Main />
+          <Footer />
         </Route>
         <Route exact path="/signin">
           <Login />
