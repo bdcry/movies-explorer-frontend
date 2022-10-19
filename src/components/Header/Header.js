@@ -1,10 +1,13 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
+import NavTab from "../NavTab/NavTab";
+import Navigation from "../Navigation/Navigation";
+import accountIcon from "../../images/account-icon.svg";
 
-function Header() {
+function Header({ loggedIn }) {
   return (
-    <header className="header">
+    <header className={`header ${!loggedIn ? "header_type_auth" : ""}`}>
       <Link to="/">
         <img
           className="header__logo"
@@ -12,14 +15,16 @@ function Header() {
           alt="Логотип Проекта Movies Explorer"
         ></img>
       </Link>
-      <div className="header__auth">
-        <Link className="header__signup" to="/signup">
-          Регистрация
-        </Link>
-        <Link className="header_signin" to="/signin">
-          Войти
-        </Link>
-      </div>
+      {!loggedIn ? (
+        <NavTab />
+      ) : (
+        <>
+          <Navigation />
+          <Link className="header__link header__link_account" to="/profile">
+            <img className="header__img" src={accountIcon} alt="" /> Аккаунт
+          </Link>
+        </>
+      )}
     </header>
   );
 }

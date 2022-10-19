@@ -1,0 +1,19 @@
+.movies__border {
+  margin: 0 70px;
+  border: 1px solid #424242;
+  box-sizing: border-box;
+}
+
+/* Adaptive layout for pads */
+@media screen and (max-width: 1030px) {
+  .movies__border {
+    margin: 0 30px;
+  }
+}
+
+/* Adaptive layout for mobiles */
+@media screen and (max-width: 730px) {
+  .movies__border {
+    margin: 0 10px;
+  }
+}
