@@ -1,0 +1,8 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/InterWeb/inter.css);
+
+@import url(/src/components/App/App.css);
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+}

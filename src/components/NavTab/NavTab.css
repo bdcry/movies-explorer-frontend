@@ -1,0 +1,54 @@
+.navtab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #686868;
+  font-weight: 500;
+  min-width: 183px;
+  margin: auto 0;
+}
+
+.navtab__signup {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  transition: opacity 0.2s linear;
+}
+
+.navtab__signup:hover {
+  opacity: 0.6;
+}
+
+.navtab__signin {
+  background-color: #3ddc84;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 8px 20px;
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 16px;
+  transition: opacity 0.2s linear;
+}
+
+.navtab__signin:hover {
+  opacity: 0.6;
+}
+
+/* Adaptive layout for mobiles */
+@media screen and (max-width: 540px) {
+  .navtab {
+    min-width: 132px;
+  }
+  .navtab__signup {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .navtab__signin {
+    font-size: 10px;
+    line-height: 16px;
+    padding: 5px 12px;
+  }
+}
