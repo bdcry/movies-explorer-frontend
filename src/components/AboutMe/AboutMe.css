@@ -121,8 +121,13 @@
   }
 
   .aboutme__image {
-    margin: 60px 0 40px;
-    height: 390px;
+    /* margin: 60px 0 0 49px; */
+
+    margin-left: 14px;
+    margin-bottom: 40px;
+
+    height: 292px;
+    width: 292px;
   }
 
   .aboutme__name {
@@ -139,6 +144,7 @@
   .aboutme__info {
     font-size: 11px;
     line-height: 16px;
+
   }
 
   .aboutme__socialnetlink {

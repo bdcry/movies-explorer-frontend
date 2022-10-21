@@ -7,10 +7,9 @@
   overflow: hidden;
 }
 
-.movie__delete {
+.movie__button {
   position: absolute;
   padding: 0;
-  background-image: url(../../images/movie_delete_icon.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -21,8 +20,46 @@
   cursor: pointer;
 }
 
-.movie__delete:hover {
-  opacity: 0.5;
+.movie__button:hover {
+  transform: scale(1.2);
+}
+
+.movie__like_active {
+  background-image: url(../../images/saved.svg);
+  transition: transform .4s ease-in;
+}
+
+.movie__delete {
+  display: none;
+  background-image: url(../../images/movie_delete_icon.svg);
+  transition: all .2s ease-in;
+}
+
+.movie__like {
+  position: absolute;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  width: 72px;
+  height: 21px;
+  top: 15px;
+  left: 274px;
+  cursor: pointer;
+  display: none;
+  background-image: url(../../images/movie__button-save.svg);
+  transition: all .2s ease-in;
+}
+
+.movie:hover .movie__like {
+  display: block;
+}
+
+.movie:hover .movie__delete {
+  display: block;
+}
+
+.movie__button:hover {
+  transform: scale(1.2);
 }
 
 .movie__photo {
@@ -88,6 +125,17 @@
   .movie__delete {
     top: 10px;
     left: 269px;
+  }
+
+  .movie__like_active {
+    top: 10px;
+    left: 269px;
+  }
+
+  .movie__like {
+    top: 10px;
+    right: 10px;
+    left: 218px
   }
 
   .movie__title {
