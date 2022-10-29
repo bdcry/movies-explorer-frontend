@@ -1,5 +1,6 @@
 import accountIcon from "../../images/account-icon.svg";
 import "./Navigation.css";
+import { NavLink } from "react-router-dom";
 
 function Navigation() {
   return (
@@ -9,34 +10,38 @@ function Navigation() {
         id="navigation__toggle"
         type="checkbox"
       />
-      <label className="navigation__btn" for="navigation__toggle">
+      <label className="navigation__btn" htmlFor="navigation__toggle">
         <span className="navigation__btn-img"></span>
       </label>
       <div className="navigation__container">
         <ul className="navigation__items">
           <li className="navigation__item navigation__item_type_main">
-            <a className="navigation__link" href="/">
+            <NavLink className="navigation__link" to="/">
               Главная
-            </a>
+            </NavLink>
           </li>
           <li className="navigation__item">
-            <a className="navigation__link" href="/movies">
+            <NavLink className="navigation__link" to="/movies">
               Фильмы
-            </a>
+            </NavLink>
           </li>
           <li className="navigation__item">
-            <a className="navigation__link" href="/saved-movies">
+            <NavLink className="navigation__link" to="/saved-movies">
               Сохранённые фильмы
-            </a>
+            </NavLink>
           </li>
           <li className="navigation__item navigation__item_account">
-            <img className="navigation__link-img" src={accountIcon} alt="" />
-            <a
+            <img
+              className="navigation__link-img"
+              src={accountIcon}
+              alt="Иконка аккаунта"
+            />
+            <NavLink
               className="navigation__link navigation__link_account"
-              href="/profile"
+              to="/profile"
             >
               Аккаунт
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>

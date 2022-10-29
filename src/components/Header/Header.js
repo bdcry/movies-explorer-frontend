@@ -1,13 +1,14 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import NavTab from "../NavTab/NavTab";
 import Navigation from "../Navigation/Navigation";
 import accountIcon from "../../images/account-icon.svg";
 
 function Header({ loggedIn }) {
+  const { pathname } = useLocation();
   return (
-    <header className={`header ${!loggedIn ? "header_type_auth" : ""}`}>
+    <header className={`header ${pathname === "/" ? "header_type_auth" : ""}`}>
       <Link to="/">
         <img
           className="header__logo"
@@ -15,7 +16,7 @@ function Header({ loggedIn }) {
           alt="Логотип Проекта Movies Explorer"
         ></img>
       </Link>
-      {!loggedIn ? (
+      {loggedIn ? (
         <NavTab />
       ) : (
         <>

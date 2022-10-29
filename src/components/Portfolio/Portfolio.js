@@ -7,7 +7,7 @@ function Portfolio() {
       <ul className="portfolio__list">
         <li className="portfolio__item">
           <a
-            class="portfolio__link"
+            className="portfolio__link"
             href="https://bdcry.github.io/how-to-learn/"
             target="_blank"
             rel="noreferrer"
@@ -17,7 +17,7 @@ function Portfolio() {
         </li>
         <li className="portfolio__item">
           <a
-            class="portfolio__link"
+            className="portfolio__link"
             href="https://bdcry.github.io/russian-travel/"
             target="_blank"
             rel="noreferrer"
@@ -27,7 +27,7 @@ function Portfolio() {
         </li>
         <li className="portfolio__item">
           <a
-            class="portfolio__link"
+            className="portfolio__link"
             href="https://bdcry.github.io/mesto/"
             target="_blank"
             rel="noreferrer"
@@ -37,7 +37,7 @@ function Portfolio() {
         </li>
         <li className="portfolio__item">
           <a
-            class="portfolio__link"
+            className="portfolio__link"
             href="https://somethingawesome.nomoredomains.sbs/"
             target="_blank"
             rel="noreferrer"

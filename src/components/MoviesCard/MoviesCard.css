@@ -26,13 +26,13 @@
 
 .movie__like_active {
   background-image: url(../../images/saved.svg);
-  transition: transform .4s ease-in;
+  transition: transform 0.4s ease-in;
 }
 
 .movie__delete {
   display: none;
   background-image: url(../../images/movie_delete_icon.svg);
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .movie__like {
@@ -47,7 +47,7 @@
   cursor: pointer;
   display: none;
   background-image: url(../../images/movie__button-save.svg);
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .movie:hover .movie__like {
@@ -135,7 +135,7 @@
   .movie__like {
     top: 10px;
     right: 10px;
-    left: 218px
+    left: 218px;
   }
 
   .movie__title {
