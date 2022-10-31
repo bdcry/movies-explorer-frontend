@@ -22,7 +22,6 @@ const onError = (res) => {
 
 const moviesApi = new MoviesApi({
   baseUrl: "https://api.nomoreparties.co/beatfilm-movies",
-  // baseUrl: "http://localhost:3004",
 });
 
 export default moviesApi;

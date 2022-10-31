@@ -42,7 +42,7 @@ function Movies() {
       });
 
     mainApi
-      .getMovies() // запрашивает сохраненые фильмы
+      .getMovies() // запрашиваем сохраненные фильмы
       .then((data) => {
         setSaveMovies(data);
       })

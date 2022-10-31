@@ -20,7 +20,6 @@ function Profile({ onSignOut }) {
     mainApi
       .setUserInfo(newUserName, newUserEmail)
       .then((res) => {
-        console.log("res ===", res);
         setVisibleButton(false);
         setUserName(newUserName);
         setUserEmail(newUserEmail);

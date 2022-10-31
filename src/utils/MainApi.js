@@ -78,7 +78,6 @@ class MainApi {
 
   addMovie(movie) {
     // добавить карточку метод POST
-    console.log("movie - addMovie", movie);
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
       headers: this._headers,
@@ -105,7 +104,7 @@ const onError = (res) => {
         ? "Такая почта занята"
         : res.status === 401
         ? "Неверный логин или пароль"
-        : "Не известная ошибка"
+        : "Неизвестная ошибка"
     }
     `);
 };
