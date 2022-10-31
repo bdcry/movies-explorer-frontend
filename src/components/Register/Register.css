@@ -53,7 +53,8 @@
 }
 
 .register__input-error {
-  font-size: 10px;
+  opacity: 0;
+  font-size: 12px;
   line-height: 12px;
   color: #ee3465;
   margin-top: 9px;
@@ -76,6 +77,15 @@
   line-height: 17px;
   transition: opacity 0.2s linear;
   cursor: pointer;
+}
+
+.register__submit_disabled {
+  background: #808080;
+  transition: background 0.3s ease;
+}
+.register__submit_disabled:hover {
+  opacity: 1;
+  cursor: auto;
 }
 
 .register__submit:hover {

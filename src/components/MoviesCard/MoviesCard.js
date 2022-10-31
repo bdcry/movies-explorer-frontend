@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
 import "./MoviesCard.css";
 
 function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
@@ -44,17 +45,18 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
       }
     }
   }, [pathname, saveMovies, movie.id]);
+
   return (
     <article className="movie">
       {pathname === "/saved-movies" ? (
         <button
           className="movie__button movie__delete"
           onClick={handleSavedDelete}
-        ></button>
+        />
       ) : (
         <button
           className={`movie__button movie__like ${
-            saved ? "movie__like_active" : ""
+            saved ? "movie__button_saved_active" : ""
           }`}
           onClick={handleSavedToogle}
         ></button>

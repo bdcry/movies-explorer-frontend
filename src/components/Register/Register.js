@@ -101,7 +101,10 @@ function Register({ onRegister, textError }) {
               className={`register__input-error ${
                 !textError ? "" : "register__input-error_show"
               }`}
-            ></span>
+            >
+              Ошибка при регистрации. <br></br>Возможно, пользователь с такой
+              почтой уже зарегистрирован.
+            </span>
             <button
               className={`register__submit ${
                 !isValid ? "register__submit_disabled" : ""

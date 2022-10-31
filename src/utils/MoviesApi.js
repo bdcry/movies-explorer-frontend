@@ -1,7 +1,6 @@
 class MoviesApi {
-  constructor({ baseUrl, headers }) {
+  constructor({ baseUrl }) {
     this._baseUrl = baseUrl;
-    this._headers = headers;
   }
   // Movies
   getMovies() {
@@ -23,9 +22,7 @@ const onError = (res) => {
 
 const moviesApi = new MoviesApi({
   baseUrl: "https://api.nomoreparties.co/beatfilm-movies",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  // baseUrl: "http://localhost:3004",
 });
 
 export default moviesApi;

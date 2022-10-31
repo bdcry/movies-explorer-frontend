@@ -42,7 +42,7 @@ function Movies() {
       });
 
     mainApi
-      .getMovies() // запрашиваем сохраненные фильмы
+      .getMovies() // запрашивает сохраненые фильмы
       .then((data) => {
         setSaveMovies(data);
       })
@@ -177,7 +177,6 @@ function Movies() {
       let filterData = [];
 
       if (tumbler) {
-        console.log("movies", movies);
         setMoviesShowedWithTumbler(moviesShowed);
         setMoviesWithTumbler(movies);
         filterDataShowed = moviesShowed.filter(

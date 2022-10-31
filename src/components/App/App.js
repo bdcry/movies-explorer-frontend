@@ -27,7 +27,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const [messageError, setMessageError] = useState({});
+  const [messageError, setMessageError] = useState(false);
 
   const history = useHistory();
   const { pathname } = useLocation();
@@ -52,6 +52,8 @@ function App() {
         })
         .catch((err) => {
           console.log("Ошибка при провеке токена ", err);
+          localStorage.removeItem('token')
+          setLoggedIn(false)
         });
     }
   }
@@ -87,7 +89,7 @@ function App() {
           });
         }
       })
-      .catch((err) => console.log("Ошибка при провеке авторизации ", err));
+      .catch((err) => console.log("Ошибка при проверке авторизации ", err));
   }
 
   function onSignOut() {
@@ -139,7 +141,7 @@ function App() {
             {!loggedIn ? (
               <Register
                 onRegister={handleRegister}
-                textError={messageError.text}
+                textError={messageError}
               />
             ) : (
               <Redirect to="/movies" />

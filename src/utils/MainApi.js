@@ -77,7 +77,8 @@ class MainApi {
   }
 
   addMovie(movie) {
-    // добавить карточку метотд POST
+    // добавить карточку метод POST
+    console.log("movie - addMovie", movie);
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
       headers: this._headers,
@@ -110,7 +111,7 @@ const onError = (res) => {
 };
 
 const mainApi = new MainApi({
-  baseUrl: "http://localhost:3004",
+  baseUrl: "https://api.awesomemoviesexplorer.students.nomoredomains.sbs",
   headers: {
     Authorization: `Bearer ${localStorage.getItem("token")}`,
     "Content-Type": "application/json",

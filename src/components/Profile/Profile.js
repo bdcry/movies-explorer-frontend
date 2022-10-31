@@ -35,8 +35,6 @@ function Profile({ onSignOut }) {
   function handleNameChange(e) {
     const name = e.target.value;
     setNewUserName(name);
-    console.log("имя -", userName);
-    console.log("вводимое в поле имя -", name);
 
     if (name !== userName) {
       setVisibleButton(true);

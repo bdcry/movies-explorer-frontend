@@ -75,7 +75,7 @@ function Login({ onLogin, textError }) {
                 textError ? "login__input-error_show" : ""
               }`}
             >
-              {textError}
+              Неверный логин или пароль.
             </span>
             <button
               className={`login__submit ${

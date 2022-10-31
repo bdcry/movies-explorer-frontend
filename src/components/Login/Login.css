@@ -53,7 +53,8 @@
 }
 
 .login__input-error {
-  font-size: 10px;
+  opacity: 0;
+  font-size: 12px;
   line-height: 12px;
   color: #ee3465;
   margin-top: 9px;
