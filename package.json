@@ -17,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "scp -r ./build/* bdcry@51.250.48.228:/home/bdcry/movies-explorer-frontend/build"
   },
   "eslintConfig": {
     "extends": [
