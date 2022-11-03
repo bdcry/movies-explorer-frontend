@@ -23,7 +23,7 @@ export const SEARCH_CARDS_240 = 5;
 // Длительность короткометражек
 export const SHORT_MOVIE_DURATION = 40;
 
-export const URL_REGEX = 'https://api.nomoreparties.co';
+export const MOVIESURL = 'https://api.nomoreparties.co';
 
 export const DUPLICEATECONFLICTERROR = 409;
 

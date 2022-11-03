@@ -96,6 +96,9 @@ function App() {
     localStorage.removeItem("token");
     localStorage.removeItem('moviesAll')
     localStorage.removeItem("movies");
+    localStorage.removeItem("word");
+    localStorage.removeItem("checkbox");
+    localStorage.removeItem("collection");
     localStorage.removeItem("moviesTumbler");
     localStorage.removeItem("moviesInputSearch");
     localStorage.removeItem("savedMoviesTumbler");

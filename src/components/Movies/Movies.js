@@ -20,7 +20,7 @@ import {
   SEARCH_CARDS_768,
   SEARCH_CARDS_240,
   SHORT_MOVIE_DURATION,
-  URL_REGEX
+  MOVIESURL,
 } from "../../utils/constants";
 
 function Movies() {
@@ -117,9 +117,9 @@ function Movies() {
         duration: movies.duration,
         year: movies.year,
         description: movies.description,
-        image: URL_REGEX`${movies.image.url}`,
+        image: `${MOVIESURL}${movies.image.url}` || " ",
         trailerLink: movies.trailerLink,
-        thumbnail: URL_REGEX`${movies.image.url}`,
+        thumbnail: `${MOVIESURL}${movies.image.url}` || " ",
         movieId: movies.id,
         nameRU: movies.nameRU,
         nameEN: movies.nameEN,

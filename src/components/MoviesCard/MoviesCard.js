@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { MOVIESURL } from "../../utils/constants";
 
 import "./MoviesCard.css";
 
@@ -55,8 +56,8 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
         />
       ) : (
         <button
-          className={`movie__button movie__like ${
-            saved ? "movie__button_saved_active" : ""
+          className={`movie__button ${
+            saved ? "movie__like_active" : "movie__like"
           }`}
           onClick={handleSavedToogle}
         ></button>
@@ -66,7 +67,7 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
           src={
             pathname === "/saved-movies"
               ? `${movie.image}`
-              : `https://api.nomoreparties.co${movie.image.url}`
+              : `${MOVIESURL}${movie.image.url}`
           }
           alt={movie.nameRU}
           className="movie__photo"
