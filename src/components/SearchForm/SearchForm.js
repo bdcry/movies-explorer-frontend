@@ -14,7 +14,7 @@ function SearchForm({ handleGetMovies, handleGetMoviesTumbler, moviesTumbler, mo
 
   function handleSubmit(e) {
     e.preventDefault()
-    handleGetMovies(searchText)
+    handleGetMovies(searchText, checkbox)
   }
 
   function handleInputChange(e) {
@@ -27,7 +27,7 @@ function SearchForm({ handleGetMovies, handleGetMoviesTumbler, moviesTumbler, mo
   }
   return (
     <section className='search'>
-      <form className='search__form' onSubmit={handleSubmit}>
+      <form className='search__form' onSubmit={handleSubmit} noValidate>
         <input
           className='search__input'
           value={searchText || ''}

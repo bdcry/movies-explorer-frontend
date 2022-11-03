@@ -94,6 +94,7 @@ function App() {
 
   function onSignOut() {
     localStorage.removeItem("token");
+    localStorage.removeItem('moviesAll')
     localStorage.removeItem("movies");
     localStorage.removeItem("moviesTumbler");
     localStorage.removeItem("moviesInputSearch");

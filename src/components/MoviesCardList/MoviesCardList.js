@@ -14,7 +14,6 @@ function MoviesCardList({
     <section className="movies-card-list">
       {movies.length > 0 ? (
         <div className="movies-card-list__items">
-          {" "}
           {movies.map((movie) => (
             <MoviesCard
               key={movie.id || movie.movieId}
@@ -22,7 +21,7 @@ function MoviesCardList({
               saveMovies={saveMovies}
               savedMoviesToggle={savedMoviesToggle}
             />
-          ))}{" "}
+          ))}
         </div>
       ) : (
         <div className="movies-card-list__text">Ничего не найдено</div>

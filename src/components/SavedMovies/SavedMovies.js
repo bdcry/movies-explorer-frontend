@@ -4,6 +4,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import mainApi from "../../utils/MainApi";
 import Preloader from "../Preloader/Preloader";
 import { useState, useEffect } from "react";
+import {SHORT_MOVIE_DURATION} from '../../utils/constants';
 
 function SavedMovies() {
   const [movies, setMovies] = useState([]);
@@ -23,8 +24,8 @@ function SavedMovies() {
     if (tumbler) {
       setMoviesShowedWithTumbler(moviesShowed);
       setMoviesWithTumbler(movies);
-      filterDataShowed = moviesShowed.filter(({ duration }) => duration <= 40);
-      filterData = movies.filter(({ duration }) => duration <= 40);
+      filterDataShowed = moviesShowed.filter(({ duration }) => duration <= SHORT_MOVIE_DURATION);
+      filterData = movies.filter(({ duration }) => duration <= SHORT_MOVIE_DURATION);
     } else {
       filterDataShowed = moviesShowedWithTumbler;
       filterData = moviesWithTumbler;
@@ -45,7 +46,7 @@ function SavedMovies() {
       );
 
       if (tumbler)
-        filterData = filterData.filter(({ duration }) => duration <= 40);
+        filterData = filterData.filter(({ duration }) => duration <= SHORT_MOVIE_DURATION);
       setMoviesShowed(filterData);
     } catch (err) {
       setErrorText(`Произошла ошибка - ${err}`);

@@ -57,11 +57,11 @@
   transition: all 0.2s ease-in;
 }
 
-.movie:hover .movie__like {
+.movie .movie__like {
   display: block;
 }
 
-.movie:hover .movie__delete {
+.movie .movie__delete {
   display: block;
 }
 

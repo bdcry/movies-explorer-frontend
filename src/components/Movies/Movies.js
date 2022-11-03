@@ -6,6 +6,23 @@ import Preloader from "../Preloader/Preloader";
 import moviesApi from "../../utils/MoviesApi";
 import mainApi from "../../utils/MainApi";
 
+import {
+  DEVICE_WIDTH_1200,
+  DEVICE_WIDTH_900,
+  DEVICE_WIDTH_768,
+  DEVICE_WIDTH_240,
+  ADD_CARDS_1200,
+  ADD_CARDS_900,
+  ADD_CARDS_768,
+  ADD_CARDS_240,
+  SEARCH_CARDS_1200,
+  SEARCH_CARDS_900,
+  SEARCH_CARDS_768,
+  SEARCH_CARDS_240,
+  SHORT_MOVIE_DURATION,
+  URL_REGEX
+} from "../../utils/constants";
+
 function Movies() {
   const [moviesAll, setMoviesAll] = useState([]);
   const [movies, setMovies] = useState(null);
@@ -76,10 +93,10 @@ function Movies() {
     let countCards;
     const clientWidth = document.documentElement.clientWidth;
     const MoviesCountConfig = {
-      1200: [12, 3],
-      900: [9, 3],
-      768: [8, 2],
-      240: [5, 2],
+      [DEVICE_WIDTH_1200]: [SEARCH_CARDS_1200, ADD_CARDS_1200],
+      [DEVICE_WIDTH_900]: [SEARCH_CARDS_900, ADD_CARDS_900],
+      [DEVICE_WIDTH_768]: [SEARCH_CARDS_768, ADD_CARDS_768],
+      [DEVICE_WIDTH_240]: [SEARCH_CARDS_240, ADD_CARDS_240],
     };
     Object.keys(MoviesCountConfig)
       .sort((a, b) => a - b)
@@ -100,9 +117,9 @@ function Movies() {
         duration: movies.duration,
         year: movies.year,
         description: movies.description,
-        image: `https://api.nomoreparties.co${movies.image.url}`,
+        image: URL_REGEX`${movies.image.url}`,
         trailerLink: movies.trailerLink,
-        thumbnail: `https://api.nomoreparties.co${movies.image.url}`,
+        thumbnail: URL_REGEX`${movies.image.url}`,
         movieId: movies.id,
         nameRU: movies.nameRU,
         nameEN: movies.nameEN,
@@ -134,7 +151,7 @@ function Movies() {
 
     if (tumbler) {
       let filterDataDuration = moviesAll.filter(
-        ({ duration }) => duration <= 40
+        ({ duration }) => duration <= SHORT_MOVIE_DURATION
       );
       const filterDataDurationFound = filterDataDuration.filter(({ nameRU }) =>
         nameRU.toLowerCase().includes(inputSearch.toLowerCase())
@@ -169,28 +186,27 @@ function Movies() {
     }
   }
 
-  function handleGetMoviesTumbler(tumbler) {
-    localStorage.setItem("moviesTumbler", tumbler); // сохраняем состояние чек бокса
+  async function handleGetMoviesTumbler(tumbler) {
+    let filterDataShowed = [];
+    let filterData = [];
 
-    if (movies) {
-      let filterDataShowed = [];
-      let filterData = [];
-
-      if (tumbler) {
-        setMoviesShowedWithTumbler(moviesShowed);
-        setMoviesWithTumbler(movies);
-        filterDataShowed = moviesShowed.filter(
-          ({ duration }) => duration <= 40
-        );
-        filterData = movies.filter(({ duration }) => duration <= 40);
-      } else {
-        filterDataShowed = moviesShowedWithTumbler;
-        filterData = moviesWithTumbler;
-      }
-
-      setMoviesShowed(filterDataShowed);
-      setMovies(filterData);
+    if (tumbler) {
+      setMoviesShowedWithTumbler(moviesShowed);
+      setMoviesWithTumbler(movies);
+      filterDataShowed = moviesShowed.filter(({ duration }) => duration <= SHORT_MOVIE_DURATION);
+      filterData = movies.filter(({ duration }) => duration <= SHORT_MOVIE_DURATION);
+    } else {
+      filterDataShowed = moviesShowedWithTumbler;
+      filterData = moviesWithTumbler;
     }
+
+    localStorage.setItem(
+      "movies",
+      JSON.stringify(filterDataShowed.concat(filterData))
+    );
+    localStorage.setItem("moviesTumbler", tumbler);
+    setMoviesShowed(filterDataShowed);
+    setMovies(filterData);
   }
 
   function handleMore() {

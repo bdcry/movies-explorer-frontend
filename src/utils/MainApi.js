@@ -1,3 +1,5 @@
+import {BASE_URL, DUPLICEATECONFLICTERROR, AUTHORIZATIONERROR} from './constants';
+
 class MainApi {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -100,9 +102,9 @@ const onError = (res) => {
   }
   return Promise.reject(`
     ${
-      res.status === 409
+      res.status === DUPLICEATECONFLICTERROR
         ? "Такая почта занята"
-        : res.status === 401
+        : res.status === AUTHORIZATIONERROR
         ? "Неверный логин или пароль"
         : "Неизвестная ошибка"
     }
@@ -110,7 +112,7 @@ const onError = (res) => {
 };
 
 const mainApi = new MainApi({
-  baseUrl: "https://api.awesomemoviesexplorer.students.nomoredomains.sbs",
+  baseUrl: BASE_URL,
   headers: {
     Authorization: `Bearer ${localStorage.getItem("token")}`,
     "Content-Type": "application/json",
