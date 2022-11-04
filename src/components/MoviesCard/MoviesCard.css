@@ -24,45 +24,55 @@
   transform: scale(1.2);
 }
 
-.movie__like_active {
-  background-color: #ee3465;
+.movie__button_type_default {
+  width: 72px;
   border-radius: 30px;
-  background-image: url(../../images/saved.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #313131;
+  color: white;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 9px;
+  border: none;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+.movie__button_type_default:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+.movie__button_type_liked {
   width: 21px;
   height: 21px;
-  top: 15px;
-  left: 325px;
-}
-
-.movie__delete {
-  display: none;
-  background-image: url(../../images/movie_delete_icon.svg);
-  transition: all 0.2s ease-in;
-}
-
-.movie__like {
   position: absolute;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  width: 72px;
-  height: 21px;
-  top: 15px;
-  left: 274px;
+  right: 14px;
+  top: 14px;
+  font-size: 0;
+  border: 0;
+  border-radius: 50%;
+  background-image: url('../../images/saved.svg');
+}
+.movie__button_type_liked:hover {
+  opacity: .7;
   cursor: pointer;
-  display: none;
-  background-image: url(../../images/movie__button-save.svg);
-  transition: all 0.2s ease-in;
 }
-
-.movie .movie__like {
-  display: block;
+.movie__delete {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  font-size: 0;
+  border: 0;
+  border-radius: 50%;
+  background-image: url('../../images/movie_delete_icon.svg');
 }
-
-.movie .movie__delete {
-  display: block;
+.movie__delete:hover {
+  cursor: pointer;
 }
 
 .movie__button:hover {
@@ -120,6 +130,18 @@
   .movie__text {
     padding: 0 3px;
   }
+
+  .movie__button_type_default {
+    top: 10px;
+    right: 10px;
+    left: 260px;
+  }
+
+  .movie__button_type_liked {
+    top: 10px;
+    right: 10px;
+    left: 310px;
+  }
 }
 
 /* Adaptive layout for pads */
@@ -134,12 +156,12 @@
     left: 269px;
   }
 
-  .movie__like_active {
+  .movie__button_type_liked {
     top: 10px;
     left: 269px;
   }
 
-  .movie__like {
+  .movie__button_type_default {
     top: 10px;
     right: 10px;
     left: 218px;

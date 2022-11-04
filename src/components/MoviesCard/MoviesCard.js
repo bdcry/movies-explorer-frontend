@@ -9,22 +9,13 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
 
   const { pathname } = useLocation();
 
-  function handleSavedToogle() {
+  function handleSavedToggle() {
     const newSaved = !saved;
-    const savedMovieCard = saveMovies.filter((obj) => {
-      // eslint-disable-next-line
-      return obj.movieId == movie.id;
-    });
-    savedMoviesToggle(
-      {
-        ...movie,
-        _id: savedMovieCard.length > 0 ? savedMovieCard[0]._id : null,
-      },
-      newSaved
-    );
+    savedMoviesToggle(movie, newSaved)
   }
 
   function handleSavedDelete() {
+    alert("Фильм успешно удалён из сохранённых");
     savedMoviesToggle(movie, false);
   }
 
@@ -49,19 +40,29 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
 
   return (
     <article className="movie">
-      {pathname === "/saved-movies" ? (
-        <button
-          className="movie__button movie__delete"
-          onClick={handleSavedDelete}
-        />
-      ) : (
-        <button
-          className={`movie__button ${
-            saved ? "movie__like_active" : "movie__like"
-          }`}
-          onClick={handleSavedToogle}
-        ></button>
-      )}
+        {pathname === '/movies' && (
+          <button
+            className={`movie__button_type_${
+              saved ? 'liked' : 'default'
+            }`}
+            aria-label={`${
+              saved ? 'Удалить фильм из сохранённых' : 'Сохранить фильм'
+            }`}
+            type="button"
+            onClick={handleSavedToggle}
+          >Сохранить</button>
+        )}
+
+        {pathname === '/saved-movies' && (
+          <button
+            className="movie__button movie__delete"
+            aria-label="Удалить фильм"
+            type="button"
+            onClick={handleSavedDelete}
+          />
+        )}
+
+
       <a className="" href={movie.trailerLink} target="_blank" rel="noreferrer">
         <img
           src={

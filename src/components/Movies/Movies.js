@@ -127,6 +127,7 @@ function Movies() {
       try {
         await mainApi.addMovie(objMovies);
         const newSaved = await mainApi.getMovies();
+        alert("Фильм успешно сохранён!");
         setSaveMovies(newSaved);
       } catch (err) {
         console.log("Ошибка", err);
@@ -193,13 +194,16 @@ function Movies() {
     if (tumbler) {
       setMoviesShowedWithTumbler(moviesShowed);
       setMoviesWithTumbler(movies);
-      filterDataShowed = moviesShowed.filter(({ duration }) => duration <= SHORT_MOVIE_DURATION);
-      filterData = movies.filter(({ duration }) => duration <= SHORT_MOVIE_DURATION);
+      filterDataShowed = moviesShowed.filter(
+        ({ duration }) => duration <= SHORT_MOVIE_DURATION
+      );
+      filterData = movies.filter(
+        ({ duration }) => duration <= SHORT_MOVIE_DURATION
+      );
     } else {
       filterDataShowed = moviesShowedWithTumbler;
       filterData = moviesWithTumbler;
     }
-
     localStorage.setItem(
       "movies",
       JSON.stringify(filterDataShowed.concat(filterData))

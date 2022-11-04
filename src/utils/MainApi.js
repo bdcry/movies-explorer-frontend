@@ -88,7 +88,7 @@ class MainApi {
   }
 
   deleteMovie(id) {
-    // удалить карточку метотд DELETE
+    // удалить карточку метод DELETE
     return fetch(`${this._baseUrl}/movies/${id}`, {
       method: "DELETE",
       headers: this._headers,
