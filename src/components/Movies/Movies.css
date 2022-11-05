@@ -1,0 +1,29 @@
+.movies__border {
+  margin: 0 70px;
+  border: 1px solid #424242;
+  box-sizing: border-box;
+}
+
+.movies__text-error {
+  margin: 78px 0 0;
+  padding: 0 0 20px;
+  text-align: center;
+  color: #8b8b8b;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+/* Adaptive layout for pads */
+@media screen and (max-width: 1030px) {
+  .movies__border {
+    margin: 0 30px;
+  }
+}
+
+/* Adaptive layout for mobiles */
+@media screen and (max-width: 730px) {
+  .movies__border {
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,117 @@
+.promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #073042;
+  padding: 75px 70px 75px;
+}
+
+.promo__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  width: 640px;
+  color: white;
+  padding-bottom: 36px;
+}
+
+.promo__subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  width: 310px;
+  opacity: 0.5;
+  padding-bottom: 146px;
+}
+
+.promo__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: solid 1px white;
+  width: 129px;
+  height: 36px;
+  font-size: 12px;
+  line-height: 1.33;
+  border-radius: 3px;
+  transition: opacity 0.3s linear;
+}
+
+.promo__link:hover {
+  opacity: 0.6;
+}
+
+.promo__image {
+  background-image: url("../../images/text__COLOR_landing-logo.svg");
+  width: 310px;
+  height: 304px;
+}
+
+/* Adaptive layout for pads */
+@media screen and (max-width: 1060px) {
+  .promo {
+    padding: 140px 30px 78px;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+
+  .promo__title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    width: 680px;
+    text-align: center;
+    padding: 50px 30px 20px;
+  }
+
+  .promo__subtitle {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    padding-bottom: 90px;
+    margin: auto;
+    width: 260px;
+  }
+
+  .promo__link {
+    margin: auto;
+  }
+}
+/* Adaptive layout for pads */
+@media screen and (max-width: 700px) {
+  .promo__title {
+    width: 400px;
+  }
+}
+/* Adaptive layout for mobiles */
+@media screen and (max-width: 500px) {
+  .promo {
+    padding: 70px 0 30px;
+  }
+
+  .promo__title {
+    font-size: 30px;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    width: 310px;
+    text-align: center;
+    padding: 44px 0 24px;
+  }
+
+  .promo__subtitle {
+    font-size: 13px;
+    line-height: 16px;
+    padding-bottom: 79px;
+  }
+
+  .promo__image {
+    max-width: 210px;
+    max-height: 206px;
+    background-size: contain;
+  }
+}
