@@ -127,7 +127,6 @@ function Movies() {
       try {
         await mainApi.addMovie(objMovies);
         const newSaved = await mainApi.getMovies();
-        alert("Фильм успешно сохранён!");
         setSaveMovies(newSaved);
       } catch (err) {
         console.log("Ошибка", err);

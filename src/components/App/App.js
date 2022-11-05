@@ -104,7 +104,7 @@ function App() {
     localStorage.removeItem("savedMoviesTumbler");
     localStorage.removeItem("savedMoviesInputSearch");
     setLoggedIn(false);
-    localStorage.clear();
+        localStorage.clear();
   }
 
   return (

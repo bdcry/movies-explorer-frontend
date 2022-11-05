@@ -11,7 +11,17 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
 
   function handleSavedToggle() {
     const newSaved = !saved;
-    savedMoviesToggle(movie, newSaved)
+    const savedMovieCard = saveMovies.filter((obj) => {
+      // eslint-disable-next-line
+      return obj.movieId == movie.id;
+    });
+    savedMoviesToggle(
+      {
+        ...movie,
+        _id: savedMovieCard.length > 0 ? savedMovieCard[0]._id : null,
+      },
+      newSaved
+    );
   }
 
   function handleSavedDelete() {
@@ -50,7 +60,7 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
             }`}
             type="button"
             onClick={handleSavedToggle}
-          >Сохранить</button>
+          >{`${!saved ? "Сохранить" : ""}`}</button>
         )}
 
         {pathname === '/saved-movies' && (
