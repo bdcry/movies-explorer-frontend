@@ -83,7 +83,6 @@ class MainApi {
   }
 
   addMovie(movie) { // добавить карточку метотд POST
-    console.log('movie - addMovie', movie)
     return fetch(
       `${this._baseUrl}/movies`,
       {
