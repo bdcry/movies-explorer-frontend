@@ -11,6 +11,7 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
 
   function handleSavedToggle() {
     const newSaved = !saved;
+
     const savedMovieCard = saveMovies.filter((obj) => {
       // eslint-disable-next-line
       return obj.movieId == movie.id;
@@ -37,7 +38,8 @@ function MoviesCard({ movie, savedMoviesToggle, saveMovies }) {
   useEffect(() => {
     if (pathname !== "/saved-movies") {
       const savedMovieCard = saveMovies.filter((obj) => {
-        return obj.movieId === movie.id;
+        // eslint-disable-next-line
+        return obj.movieId == movie.id;
       });
 
       if (savedMovieCard.length > 0) {

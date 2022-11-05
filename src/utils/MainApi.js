@@ -1,4 +1,8 @@
-import {BASE_URL, DUPLICEATECONFLICTERROR, AUTHORIZATIONERROR} from './constants';
+import {
+  BASE_URL,
+  DUPLICEATECONFLICTERROR,
+  AUTHORIZATIONERROR,
+} from "./constants";
 
 class MainApi {
   constructor({ baseUrl, headers }) {
@@ -78,13 +82,16 @@ class MainApi {
     }).then(onError);
   }
 
-  addMovie(movie) {
-    // добавить карточку метод POST
-    return fetch(`${this._baseUrl}/movies`, {
-      method: "POST",
-      headers: this._headers,
-      body: JSON.stringify(movie),
-    }).then(onError);
+  addMovie(movie) { // добавить карточку метотд POST
+    console.log('movie - addMovie', movie)
+    return fetch(
+      `${this._baseUrl}/movies`,
+      {
+        method: 'POST',
+        headers: this._headers,
+        body: JSON.stringify(movie)
+      })
+      .then(onError)
   }
 
   deleteMovie(id) {
